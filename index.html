@@ -3,8 +3,8 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Lishan Eticha</title>
 
-<meta name="description" content="Riddle - Portfolio Template">
-<meta name="keywords" content="portfolio, riddle, onepage, creative, html">
+<meta name="description" content="Lishan Eticha">
+<meta name="keywords" content="Lishan Eticha, Lishan cv, Lishan, software developer, graphics designer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="./Riddle - Portfolio Template_files/css" rel="stylesheet">
 
@@ -16,6 +16,22 @@
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style>
+    .bs-example{
+    	margin: 20px;
+    }
+    .modal-content iframe{
+        margin: 0 auto;
+        display: block;
+    }
+    .modal-ku {
+	  width: 580px;
+	  margin: auto;
+	}
+</style>
+
 </head>
 <body class="body-pad">
 
@@ -60,8 +76,28 @@
 </div>
 </section>
 
+<div class="bs-example">
+	<p>Project demo videos</p>
+    <!-- Button HTML (to Trigger Modal) -->
+    <a href="#myModal" class="btn btn-lg btn-primary" data-filter="all" data-toggle="modal">3D Navigation System</a>
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                   <h4 class="modal-title">3D University of Gondar Navigation System</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ysaEr5HqiK8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
 
 <section class="portfolio-section">
+
 <div class="container">
 <ul class="portfolio-filter controls">
 <li class="control mixitup-control-active" data-filter="all">All</li>
@@ -323,6 +359,9 @@ Copyright ©<script type="text/javascript" async="" src="./Riddle - Portfolio Te
 <script src="./Riddle - Portfolio Template_files/main.js.download" type="text/javascript"></script>
 
 <script async="" src="./Riddle - Portfolio Template_files/js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -330,5 +369,23 @@ Copyright ©<script type="text/javascript" async="" src="./Riddle - Portfolio Te
 
   gtag('config', 'UA-23581568-13');
 </script>
-
+<script>
+$(document).ready(function(){
+    /* Get iframe src attribute value i.e. YouTube video url
+    and store it in a variable */
+    var url = $("#cartoonVideo").attr('src');
+    
+    /* Assign empty url value to the iframe src attribute when
+    modal hide, which stop the video playing */
+    $("#myModal").on('hide.bs.modal', function(){
+        $("#cartoonVideo").attr('src', '');
+    });
+    
+    /* Assign the initially stored url back to the iframe src
+    attribute when modal is displayed again */
+    $("#myModal").on('show.bs.modal', function(){
+        $("#cartoonVideo").attr('src', url);
+    });
+});
+</script>
 </body></html>
