@@ -182,4 +182,9 @@ k=0;k<h.length;k++)Rb.push(h[k]);for(var l=b.rules||[],m=0;m<l.length;m++){for(v
 Qa(u,"load",nf);a:{if(!cd)break a;u.setInterval(dd,864E5);}
 Fc=(new Date).getTime();}};(0,jk.Xf)();
 
-})()
+}
+)()
+
+function downloadFile(file) {
+  window.location.href = "Projects/"+file;
+}
